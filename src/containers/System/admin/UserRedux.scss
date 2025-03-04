@@ -1,0 +1,27 @@
+
+.imagePreview {
+    border: 1px solid gray;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: gray;
+    }
+
+    i {
+        padding: 0 5px;
+    }
+}
+.previewImage {
+    // position: absolute;
+    display: block;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    height: 70px;
+    width: 100%;
+    cursor: pointer;
+    background: center center no-repeat;
+    background-size: contain;
+}

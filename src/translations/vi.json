@@ -1,0 +1,119 @@
+{
+    "home-header": {
+        "all": "Tất cả",
+        "support": "Hỗ trợ",
+        "appointment": "Lịch hẹn",
+        "welcome": "Chào mừng, "
+    },
+
+    "login": {
+        "login": "Đăng nhập",
+        "username": "Tên đăng nhập",
+        "password": "Mật khẩu",
+        "userpass-wrong": "Tên đăng nhập hoặc mật khẩu không hợp lệ!"
+    },
+    "menu": {
+        "system": {
+            "header": "Hệ thống",
+            "system-administrator": {
+                "header": "Quản trị hệ thống",
+                "user-manage": "Quản lý người dùng",
+                "user-redux": "Quản lý người dùng Redux",
+                "register-package-group-or-account": "Đăng ký gói dịch vụ cho nhóm/tài khoản"
+            },
+            "system-parameter": {
+                "header": "Thông số hệ thống"
+            }
+        },
+        "admin": {
+            "user": "Người dùng",
+            "manage-user": "Quản lý người dùng",
+            "manage-admin": "Quản lý quản trị viên",
+            "manage-doctor": "Quản lý bác sĩ",
+            "crud-user": "CRUD người dùng",
+            "crud-redux": "CRUD quản trị viên",
+            "clinic": "Phòng khám",
+            "manage-clinic": "Quản lý phòng khám",
+            "specialty": "Chuyên khoa",
+            "manage-specialty": "Quản lý chuyên khoa",
+            "blog": "Blog",
+            "manage-blog": "Quản lý blog"
+        },
+        "doctor": {
+            "manage-schedule": "Quản lý lịch trình",
+            "manage-patient": "Quản lý bệnh nhân",
+            "choose-doctor": "Chọn bác sĩ",
+            "choose-date": "Chọn ngày",
+            "Save": "Lưu"
+        }
+    },
+    "form": {
+        "email": "Email",
+        "password": "Mật khẩu",
+        "firstName": "Họ",
+        "lastName": "Tên",
+        "address": "Địa chỉ",
+        "phone": "Số điện thoại",
+        "gender": "Giới tính",
+        "role": "Vai trò",
+        "position": "Chức vụ",
+        "image": "Hình ảnh:",
+        "imageLoad": "Tải hình ảnh",
+        "create": "Tạo người dùng",
+        "edit": "Lưu thay đổi",
+        "create-detail": "Tạo thông tin"
+    },
+    "doctor": {
+        "manage-schedule": "Quản lý lịch trình",
+        "manage-patient": "Quản lý bệnh nhân",
+        "choose-doctor": "Chọn bác sĩ",
+        "choose-date": "Chọn ngày",
+        "Save": "Lưu"
+    },
+    "patient": {
+        "detail-doctor": {
+            "schedule": "Thời gian khám",
+            "schedule-none": "Bác sĩ không có lịch khám trong thời gian này, vui lòng chọn thời gian khác.",
+            "text-first": "Chọn ",
+            "text-last": " và đặt lịch (Miễn phí)"
+        },
+        "extra": {
+            "clinic-address": "ĐỊA CHỈ PHÒNG KHÁM",
+            "price": "Giá khám bệnh: ",
+            "note": "Ghi chú: ",
+            "payment": "Phòng khám có các phương thức thanh toán sau: ",
+            "more": "Xem thêm",
+            "close": "Đóng"
+        }
+    },
+    "admin": {
+        "manage-doctor": {
+            "title": "Tạo thông tin bác sĩ",
+            "choose-doctor": "Chọn bác sĩ",
+            "doctor-info": "Giới thiệu bác sĩ",
+            "more-articles": "Thêm bài viết",
+            "save": "Lưu",
+            "add": "Tạo mới",
+            "price": "Giá",
+            "payment": "Phương thức thanh toán",
+            "province": "Tỉnh/Thành phố",
+            "nameClinic": "Tên phòng khám",
+            "addressClinic": "Địa chỉ phòng khám",
+            "note": "Ghi chú"
+        },
+        "manage-specialty": {
+            "title": "Quản lý chuyên khoa",
+            "choose-specialty": "Chọn chuyên khoa",
+            "specialty-description": "Mô tả chuyên khoa",
+            "more-articles": "Thêm bài viết",
+            "save": "Lưu",
+            "add": "Tạo mới"
+        }
+    },
+    "home-page": {
+        "doctor": "Bác sĩ",
+        "specialty": "Chuyên khoa",
+        "facility": "Cơ sở Y Tế",
+        "social-media": "Truyền thông nói về BookingCare"
+    }
+}

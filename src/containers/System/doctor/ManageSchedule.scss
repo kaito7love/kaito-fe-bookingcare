@@ -1,0 +1,16 @@
+.pick-hour-container{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px 10px;
+    
+    button {
+        margin: 0 5px;
+        border: 1px solid #0d6efd;
+        border-radius: 5px;
+    }
+}
+.btn-schedule{
+    &.active {
+        background-color: green;
+    }
+}

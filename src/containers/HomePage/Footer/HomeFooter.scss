@@ -1,0 +1,50 @@
+.home-footer {
+    background-color: rgb(100 185 229);
+    text-align      : center;
+    padding         : 5px;
+
+    p {
+        margin: 0;
+    }
+}
+
+.background-footer {
+    background-color: #f9f9f9;
+}
+
+/* src/components/ContactSection.css */
+.contact-section {
+    padding      : 20px;
+    // border: 1px solid #ddd;
+    border-radius: 5px;
+    margin       : 20px 0;
+}
+
+.contact-section h2,
+.contact-section h3 {
+    color     : #333;
+    margin-top: 0;
+}
+
+.contact-section p {
+    margin: 5px 0;
+}
+
+.contact-section ul {
+    list-style-type: none;
+    padding        : 0;
+}
+
+.contact-section ul li {
+    display     : inline;
+    margin-right: 10px;
+}
+
+.contact-section ul li a {
+    text-decoration: none;
+    color          : #007bff;
+}
+
+.contact-section ul li a:hover {
+    text-decoration: underline;
+}

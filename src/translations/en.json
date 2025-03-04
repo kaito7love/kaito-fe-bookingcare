@@ -1,0 +1,130 @@
+{
+    "home-header": {
+        "all": "All",
+        "support": "Support",
+        "appointment": "Appointment",
+        "welcome": "Welcome, "
+    },
+
+    "login": {
+        "login": "Login",
+        "username": "Username",
+        "password": "Password",
+        "userpass-wrong": "Invalid username or password!"
+    },
+    "menu": {
+        "system": {
+            "header": "System",
+            "system-administrator": {
+                "header": "System Administrator",
+                "user-manage": "User manage",
+                "user-redux": "User manage redux",
+                "register-package-group-or-account": "Register service package for group/account"
+            },
+            "system-parameter": {
+                "header": "System-parameter"
+            }
+        },
+        "admin": {
+            "user": "Users",
+            "manage-user": "Manage User",
+            "manage-admin": "Manage Admin",
+            "manage-doctor": "Manage Doctor",
+            "crud-user": "crud user",
+            "crud-redux": "crud admin",
+            "clinic": "Clinic",
+            "manage-clinic": "Manage Clinic",
+            "specialty": "Specialty",
+            "manage-specialty": "Manage Specialty",
+            "blog": "Blog",
+            "manage-blog": "Manage Blog"
+        },
+        "doctor": {
+            "manage-schedule": "Manage Schedule",
+            "manage-patient": "Manage patient",
+            "choose-doctor": "Choose Doctor",
+            "choose-date": "Choose Date",
+            "Save": "Save"
+        }
+    },
+    "form": {
+        "email": "Email",
+        "password": "Password",
+        "firstName": "First Name",
+        "lastName": "Last Name",
+        "address": "Address",
+        "phone": "Phone Number",
+        "gender": "Gender",
+        "role": "Role",
+        "position": "Position",
+        "image": "Image:",
+        "imageLoad": "Upload Image",
+        "create": "Create User",
+        "edit": "Save Changes",
+        "create-detail": "Create Information"
+    },
+    "doctor": {
+        "manage-schedule": "Manage Schedule",
+        "manage-patient": "Manage patient",
+        "choose-doctor": "Choose Doctor",
+        "choose-date": "Choose Date",
+        "Save": "Save"
+    },
+    "patient": {
+        "detail-doctor": {
+            "schedule": "Schedule Time",
+            "schedule-none": "The doctor does not have appointments available during this time, please choose another time.",
+            "text-first": "Choose ",
+            "text-last": " and book (Free)"
+        },
+        "extra": {
+            "clinic-address": "CLINIC ADDRESS",
+            "price": "Medical examination price: ",
+            "note": "Note: ",
+            "payment": "The clinic has the following payment methods: ",
+            "more": "More",
+            "close": "Close"
+        }
+    },
+    "admin": {
+        "manage-doctor": {
+            "title": "Create Information Doctors",
+            "choose-doctor": "Choose Doctor",
+            "doctor-info": "Doctor introduction",
+            "more-articles": "More articles",
+            "save": "Save",
+            "add": "Create",
+            "price": "Price",
+            "payment": "Payment",
+            "province": "Province",
+            "nameClinic": "Clinic's Name",
+            "specialty": "Specialty's Name",
+            "select-clinic": "Select Clinic",
+            "addressClinic": "Clinic's Address",
+            "note": "Note"
+        },
+        "manage-specialty": {
+            "title": "Manage Specialty",
+            "choose-specialty": "Choose Specialty Name",
+            "specialty-description": "Specialty description",
+            "more-articles": "More articles",
+            "save": "Save",
+            "add": "Create"
+        },
+        "manage-clinic": {
+            "title": "Manage Clinic",
+            "choose-clinic": "Choose Clinic Name",
+            "clinic-description": "Clinic description",
+            "clinic-address": "Clinic Address",
+            "more-articles": "More articles",
+            "save": "Save",
+            "add": "Create"
+        }
+    },
+    "home-page": {
+        "doctor": "Doctors",
+        "specialty": "Specialties",
+        "facility": "Facilities",
+        "social-media": "Social Media"
+    }
+}

@@ -1,0 +1,72 @@
+.detail-specialty-container {
+
+    .description-specialty {
+        // border: 1px solid black;
+        // height: 200px;
+        padding: 20px;
+    }
+
+    .detail-specialty {
+        background-color: rgba(22, 24, 35, .1);
+        padding         : 10px 0 5px 0;
+
+        .detail-doctor {
+            background-color: white;
+            display         : flex;
+            width           : 100%;
+            border-radius   : 15px;
+            padding         : 10px 0px;
+            margin-bottom   : 10px;
+            box-shadow      : 0 2px 6px rgba(0, 0, 0, 0.1);
+
+            .content-left {
+                width: 50%;
+            }
+
+            .content-right {
+                width       : 50%;
+                border-left : 1px solid rgba(0, 0, 0, 0.1);
+                padding-left: 10px;
+
+                .clinic-info {
+                    max-width       : 600px;
+                    margin          : 0px !important;
+                    padding         : 5px 0px !important;
+                    background-color: none !important;
+                    border-radius   : 0px !important;
+                    box-shadow      : none !important;
+                    border-top      : 1px solid rgba(0, 0, 0, 0.1);
+                }
+            }
+        }
+    }
+}
+
+.search-bar {
+    display        : block;
+    justify-content: center;
+    align-items    : center;
+    margin  :  10px 0;
+    width: 150px;
+
+    select.form-select {
+        padding         : 8px 12px;
+        border          : 1px solid #ddd;
+        border-radius   : 6px;
+        outline         : none;
+        background-color: #fff;
+        transition      : all 0.3s ease;
+
+        &:hover {
+            border-color: #40a9ff;
+        }
+
+        &:focus {
+            border-color: #1890ff;
+            box-shadow  : 0 0 5px rgba(24, 144, 255, 0.5);
+        }
+    }
+}
+.more-doctor-detail{
+    padding-left: 30px;
+}

@@ -1,0 +1,123 @@
+#customers {
+    font-family    : Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width          : 100%;
+}
+
+#customers td,
+#customers th {
+    border : 1px solid #ddd;
+    padding: 8px;
+}
+
+#customers tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#customers tr:hover {
+    background-color: #ddd;
+}
+
+#customers th {
+    padding-top     : 12px;
+    padding-bottom  : 12px;
+    text-align      : left;
+    background-color: #04aa6d;
+    color           : white;
+}
+
+.btn i {
+    // width: 20px;
+}
+
+.btn-Edit {
+    margin: 0 5px;
+}
+
+.btn-Delete {
+    margin: 0 5px;
+}
+
+.btn-addNewUser {
+    padding: 0 10px;
+
+    span {
+        padding-left: 5px;
+    }
+}
+
+.markdown {
+    display: block;
+}
+
+.input-markdown {
+    width       : 50%;
+    margin-right: 5px;
+    height      : 200px;
+}
+
+.output-markdown {
+    width      : 50%;
+    margin-left: 5px;
+    height     : 200px;
+    // border: 1px solid black;
+}
+
+.markdown-content {
+    display        : flex;
+    padding-bottom : 10px;
+    justify-content: space-between;
+}
+
+.markdown-info-left {
+    width       : 50%;
+    margin-right: 5px;
+}
+
+.markdown-info-right {
+    width      : 50%;
+    margin-left: 5px;
+}
+
+.input-info-left {
+    width: 100%;
+}
+
+.input-info-right {
+    width: 100%;
+}
+
+.markdown-doctor-detail {
+    display: flex;
+    padding: 10px 0;
+}
+
+.preview {
+    margin-top: 10px;
+    .imagePreview {
+        border       : 1px solid gray;
+        padding      : 5px;
+        border-radius: 5px;
+        cursor       : pointer;
+
+        &:hover {
+            background-color: gray;
+        }
+
+        i {
+            padding: 0 5px;
+        }
+    }
+
+    .previewImage {
+        display        : block;
+        margin-top     : 10px;
+        border         : 1px solid #ddd;
+        border-radius  : 5px;
+        height         : 70px;
+        width          : 100%;
+        cursor         : pointer;
+        background     : center center no-repeat;
+        background-size: contain;
+    }
+}
