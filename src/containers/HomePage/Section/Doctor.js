@@ -39,7 +39,7 @@ class Doctor extends Component {
             dots: false,
             infinite: false,
             speed: 500,
-            slidesToShow: 4,
+            slidesToShow: 3,
             slidesToScroll: 1
         }
 
@@ -65,8 +65,8 @@ class Doctor extends Component {
                                         arrDoctors.map((item, index) => {
                                             console.log(item);
 
-                                            const nameVi = `${item.positionData.value_vi}, ${item.lastName}, ${item.firstName}`;
-                                            const nameEn = `${item.positionData.value_en}, ${item.firstName}, ${item.lastName}`;
+                                            const nameVi = `${item.positionData.value_vi}, ${item.lastName} ${item.firstName}`;
+                                            const nameEn = `${item.positionData.value_en}, ${item.firstName} ${item.lastName}`;
                                             return (
                                                 <div key={index} className='slider-items' onClick={() => this.handleViewDetailDoctor(item)}>
                                                     <div className='slider-content'>

@@ -16,7 +16,7 @@ class DetailClinic extends Component {
     constructor(props) {
         super(props)
         this.state = ({
-            arrDoctorId: [],
+            arrDoctorId: [2, 4],
             dataDetailClinic: {},
             location: 'all',
             listProvince: [],
@@ -35,7 +35,7 @@ class DetailClinic extends Component {
     }
 
 
-    
+
     render() {
         let { arrDoctorId, dataDetailSpecialty, location, listProvince } = this.state
         let { language } = this.props
@@ -43,7 +43,60 @@ class DetailClinic extends Component {
         return (
             <React.Fragment >
                 <HomeHeader />
-                
+                <div className='detail-specialty '>
+                    {/* <div className='container'>
+                        <div className='search-bar'>
+                            <select
+                                className='form-select'
+                                value={location}
+                                onChange={this.handleChangeProvince}
+                            >
+                                {listProvince && listProvince.length > 0 &&
+                                    listProvince.map((item, index) => {
+                                        return (
+                                            <option key={index} value={item.keyMap}>
+                                                {language === LANGUAGES.VI ? item.value_vi : item.value_en}
+                                            </option>
+                                        )
+                                    })
+                                }
+                            </select>
+                        </div>
+                    </div> */}
+                    {arrDoctorId && arrDoctorId.length > 0 &&
+
+                        arrDoctorId.map((item, index) => {
+                            return (
+                                <div className='detail-doctor container' key={index}>
+                                    <div className='content-left'>
+                                        {/* <Link to={`/detail-doctor/${doctorId}`}>Xem thêm</Link> */}
+                                        <ProfileDoctor
+                                            doctorId={item}
+                                            isShowDescription={true}
+                                            isShowDetail={true}
+                                        />
+
+                                    </div>
+                                    <div className='content-right'>
+                                        {/* <DoctorSchedule
+                                                                    currentDoctorId={item}
+                                                                /> */}
+                                        <div className='doctor-schedule'>
+                                            <DoctorSchedule
+                                                currentDoctorId={item}
+                                            />
+                                        </div>
+                                        <div className='doctor-extra-info'>
+                                            <DoctorExtraInfo
+                                                currentDoctorId={item}
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            )
+                        })
+                    }
+                </div>
                 <HomeFooter />
             </React.Fragment >
         );

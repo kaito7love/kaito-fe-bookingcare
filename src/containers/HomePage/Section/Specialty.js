@@ -25,7 +25,7 @@ class Specialty extends Component {
         if (prevProps.language !== this.props.language) {
 
         }
-        
+
     }
 
     getDataAllSpecialty = async () => {
@@ -38,8 +38,8 @@ class Specialty extends Component {
         console.log(this.state.dataSpecialty);
     }
 
-     //access detail
-     handleViewDetailSpecialty = (item) => {
+    //access detail
+    handleViewDetailSpecialty = (item) => {
         if (this.props.history) {
             this.props.history.push(`/detail-specialty/${item.id}`)
         }
@@ -48,6 +48,7 @@ class Specialty extends Component {
     render() {
         let { dataSpecialty } = this.state
         let { language } = this.props
+        console.log("check dataSpecialty ", dataSpecialty);
 
         const settings = {
             dots: false,
@@ -63,7 +64,7 @@ class Specialty extends Component {
                         <div className='section-content'>
                             <p className='section-text'><FormattedMessage id="home-page.specialty" /></p>
                             <button className='section-btn'>
-                                Xem Thêm
+                            <FormattedMessage id="home-page.more" />
                             </button>
                         </div>
                         <div className='section-body'>
@@ -72,11 +73,13 @@ class Specialty extends Component {
                                     {dataSpecialty && dataSpecialty.length > 0 &&
                                         dataSpecialty.map((item, index) => {
                                             console.log(item);
+                                            const nameVi = `${item.name}`;
+                                            const nameEn = `${item.description}`;
                                             return (
                                                 <div key={index} className='slider-items' onClick={() => this.handleViewDetailSpecialty(item)}>
                                                     <div className='slider-content'>
                                                         <img src={item.image} alt={item.text} className='slider-img' />
-                                                        <div className='slider-text'>{item.name}</div>
+                                                        <div className='slider-text'>{language === LANGUAGES.VI ? nameVi : nameEn}</div>
                                                         {/* <div className='slider-text'>Chuyen khoa</div> */}
                                                     </div>
                                                 </div>
