@@ -2,8 +2,11 @@
     "home-header": {
         "all": "Tất cả",
         "support": "Hỗ trợ",
-        "appointment": "Lịch hẹn",
-        "welcome": "Chào mừng, "
+        "appointment": "Cuộc hẹn",
+        "welcome": "Chào mừng, ",
+        "home": "Tại nhà",
+        "hospital": "Tại Viện",
+        "live": "Sống khỏe"
     },
 
     "login": {
@@ -18,11 +21,11 @@
             "system-administrator": {
                 "header": "Quản trị hệ thống",
                 "user-manage": "Quản lý người dùng",
-                "user-redux": "Quản lý người dùng Redux",
+                "user-redux": "Quản lý người dùng redux",
                 "register-package-group-or-account": "Đăng ký gói dịch vụ cho nhóm/tài khoản"
             },
             "system-parameter": {
-                "header": "Thông số hệ thống"
+                "header": "Tham số hệ thống"
             }
         },
         "admin": {
@@ -30,8 +33,8 @@
             "manage-user": "Quản lý người dùng",
             "manage-admin": "Quản lý quản trị viên",
             "manage-doctor": "Quản lý bác sĩ",
-            "crud-user": "CRUD người dùng",
-            "crud-redux": "CRUD quản trị viên",
+            "crud-user": "crud người dùng",
+            "crud-redux": "crud quản trị viên",
             "clinic": "Phòng khám",
             "manage-clinic": "Quản lý phòng khám",
             "specialty": "Chuyên khoa",
@@ -50,15 +53,15 @@
     "form": {
         "email": "Email",
         "password": "Mật khẩu",
-        "firstName": "Họ",
-        "lastName": "Tên",
+        "firstName": "Tên",
+        "lastName": "Họ",
         "address": "Địa chỉ",
         "phone": "Số điện thoại",
         "gender": "Giới tính",
         "role": "Vai trò",
         "position": "Chức vụ",
         "image": "Hình ảnh:",
-        "imageLoad": "Tải hình ảnh",
+        "imageLoad": "Tải lên hình ảnh",
         "create": "Tạo người dùng",
         "edit": "Lưu thay đổi",
         "create-detail": "Tạo thông tin"
@@ -73,14 +76,14 @@
     "patient": {
         "detail-doctor": {
             "schedule": "Thời gian khám",
-            "schedule-none": "Bác sĩ không có lịch khám trong thời gian này, vui lòng chọn thời gian khác.",
+            "schedule-none": "Bác sĩ không có lịch khám vào thời gian này, vui lòng chọn thời gian khác.",
             "text-first": "Chọn ",
             "text-last": " và đặt lịch (Miễn phí)"
         },
         "extra": {
             "clinic-address": "ĐỊA CHỈ PHÒNG KHÁM",
             "price": "Giá khám bệnh: ",
-            "note": "Ghi chú: ",
+            "note": "Lưu ý: ",
             "payment": "Phòng khám có các phương thức thanh toán sau: ",
             "more": "Xem thêm",
             "close": "Đóng"
@@ -88,23 +91,34 @@
     },
     "admin": {
         "manage-doctor": {
-            "title": "Tạo thông tin bác sĩ",
-            "choose-doctor": "Chọn bác sĩ",
-            "doctor-info": "Giới thiệu bác sĩ",
+            "title": "Tạo Thông Tin Bác Sĩ",
+            "choose-doctor": "Chọn Bác Sĩ",
+            "doctor-info": "Giới thiệu về bác sĩ",
             "more-articles": "Thêm bài viết",
             "save": "Lưu",
             "add": "Tạo mới",
             "price": "Giá",
-            "payment": "Phương thức thanh toán",
+            "payment": "Thanh toán",
             "province": "Tỉnh/Thành phố",
-            "nameClinic": "Tên phòng khám",
-            "addressClinic": "Địa chỉ phòng khám",
+            "nameClinic": "Tên Phòng Khám",
+            "specialty": "Tên Chuyên Khoa",
+            "select-clinic": "Chọn Phòng Khám",
+            "addressClinic": "Địa Chỉ Phòng Khám",
             "note": "Ghi chú"
         },
         "manage-specialty": {
-            "title": "Quản lý chuyên khoa",
-            "choose-specialty": "Chọn chuyên khoa",
-            "specialty-description": "Mô tả chuyên khoa",
+            "title": "Quản lý Chuyên Khoa",
+            "choose-specialty": "Chọn Tên Chuyên Khoa",
+            "specialty-description": "Mô tả Chuyên Khoa",
+            "more-articles": "Thêm bài viết",
+            "save": "Lưu",
+            "add": "Tạo mới"
+        },
+        "manage-clinic": {
+            "title": "Quản lý Phòng Khám",
+            "choose-clinic": "Chọn Tên Phòng Khám",
+            "clinic-description": "Mô tả Phòng Khám",
+            "clinic-address": "Địa Chỉ Phòng Khám",
             "more-articles": "Thêm bài viết",
             "save": "Lưu",
             "add": "Tạo mới"
@@ -113,7 +127,10 @@
     "home-page": {
         "doctor": "Bác sĩ",
         "specialty": "Chuyên khoa",
-        "facility": "Cơ sở Y Tế",
-        "social-media": "Truyền thông nói về BookingCare"
+        "facility": "Cơ sở vật chất",
+        "social-media": "Mạng xã hội",
+        "more": "Xem thêm",
+        "search-ai": "Đặt câu hỏi với trợ lý AI",
+        "title": "Nơi khởi nguồn sức khỏe"
     }
 }

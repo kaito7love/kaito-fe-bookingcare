@@ -80,12 +80,24 @@ const getDetailSpecialtyService = (data) => {
     return axios.get(`/api/get-detail-specialty?specialtyId=${data.specialtyId}&location=${data.location}`);
 };
 
+const getAllClinic = () => {
+    return axios.get(`/api/get-clinic`);
+};
+
 const getDetailClinicService = (data) => {
     return axios.get(`/api/get-detail-clinic?clinicId=${data.clinicId}&location=${data.location}`);
 };
 
 const getAllPatientForDoctor = (data) => {
     return axios.get(`/api/get-list-patient-for-doctors?doctorId=${data.doctorId}&date=${data.date}`);
+};
+
+const sendBillService = (data) => {
+    return axios.post(`/api/send-bill`, data);
+};
+
+const cancelBookingService = (data) => {
+    return axios.post(`/api/cancel-booking`, data);
 };
 
 export {
@@ -110,4 +122,8 @@ export {
     getAllSpecialty,
     getDetailSpecialtyService,
     postClinicDescription,
+    getAllClinic,
+    getDetailClinicService,
+    sendBillService,
+    cancelBookingService,
 };

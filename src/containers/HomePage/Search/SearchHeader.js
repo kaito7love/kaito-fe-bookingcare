@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import "./SearchHeader.scss"
+import { FormattedMessage } from 'react-intl';
 class SearchHeader extends Component {
 
     render() {
         return (
             <>
-             <div className="home-header-search">
+                <div className="home-header-search">
                     <div className="header-search-text">
-                        <p>Nơi khởi nguồn sức khỏe</p>
+                        <p><FormattedMessage id="home-page.title" /></p>
                     </div>
                     <div className="search-form"  >
                         <div class="s009">
@@ -16,11 +17,15 @@ class SearchHeader extends Component {
                                 <div class="inner-form">
                                     <div class="basic-search">
                                         <div class="input-field">
-                                            <input
-                                                id="search"
-                                                type="text"
-                                                placeholder="Đặt Câu Hỏi Với Trợ Lý AI"
-                                            />
+                                            <FormattedMessage id="home-page.search-ai">
+                                                {text => (
+                                                    <input
+                                                        id="search"
+                                                        type="text"
+                                                        placeholder={text}  // Pass plain string to placeholder
+                                                    />
+                                                )}
+                                            </FormattedMessage>
                                             <div class="icon-wrap">
                                                 <svg
                                                     class="svg-inline--fa fa-search fa-w-16"

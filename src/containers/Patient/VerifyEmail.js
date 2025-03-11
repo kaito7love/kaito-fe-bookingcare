@@ -7,8 +7,6 @@ import { postVerifyBookingAppointment } from '../../services/userService';
 import OrderDetails from '../System/payment/OrderDetails';
 
 
-
-
 class VerifyEmail extends Component {
     constructor(props) {
         super(props)
@@ -60,14 +58,14 @@ class VerifyEmail extends Component {
                         <div>
                             {+errCode === 0 ?
                                 <div className='info-booking'>Appointment successfully confirmed!</div> :
-                                <div className='info-booking'>The appointment does not exist or has already been confirmed!</div>
+                                <div className='info-booking'>The appointment has already been confirmed!</div>
                             }
                         </div>
 
-                        
+
                     }
                 </div>
-                <OrderDetails/>
+                <OrderDetails />
             </React.Fragment>
         );
     }

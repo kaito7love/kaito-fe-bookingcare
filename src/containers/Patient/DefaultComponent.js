@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { FormattedMessage } from "react-intl";
-
+import './DefaultComponent.scss'
 
 
 

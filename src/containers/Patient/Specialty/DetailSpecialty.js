@@ -55,7 +55,7 @@ class DetailSpecialty extends Component {
                 let data = res.data;
                 let arrDoctorId = [];
                 if (data && !_.isEmpty(data)) {
-                    let arr = data.doctorSpecialty;
+                    let arr = data.doctor;
                     if (arr && arr.length > 0) {
                         arrDoctorId = arr.map(item => item.doctorId);
                     }

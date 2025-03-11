@@ -39,7 +39,7 @@ class Doctor extends Component {
             dots: false,
             infinite: false,
             speed: 500,
-            slidesToShow: 3,
+            slidesToShow: 4,
             slidesToScroll: 1
         }
 
@@ -55,7 +55,7 @@ class Doctor extends Component {
                         <div className='section-content'>
                             <p className='section-text'><FormattedMessage id="home-page.doctor" /></p>
                             <button className='section-btn'>
-                                Xem Thêm
+                                <FormattedMessage id="home-page.more" />
                             </button>
                         </div>
                         <div className='section-body'>

@@ -136,7 +136,7 @@ class DoctorSchedule extends Component {
   render() {
     let { allDays, allAvailableTime } = this.state
     let { language } = this.props
-    console.log("check state from scheule", this.state);
+    // console.log("check state from scheule", this.state);
 
     return (
       <React.Fragment>

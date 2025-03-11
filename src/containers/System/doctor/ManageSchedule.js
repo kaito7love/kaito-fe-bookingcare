@@ -25,8 +25,11 @@ class ManageSchedule extends Component {
     }
 
     componentDidMount() {
-        this.props.fetchAllDoctor();
         this.props.fetchAllScheduleTime();
+        this.props.fetchAllDoctor();
+        this.setState({
+            selectedDoctor: { value: this.props.user.id }
+        })
     }
 
     componentDidUpdate(prevProps, prevState) {
@@ -58,13 +61,11 @@ class ManageSchedule extends Component {
     }
     handleSaveSchedule = async () => {
         let { scheduleTime, selectedDoctor, currentDate } = this.state
+        console.log(selectedDoctor);
+
         let result = []
         if (!currentDate) {
             toast.error("Invalid Date!")
-            return
-        }
-        if (selectedDoctor && _.isEmpty(selectedDoctor)) {
-            toast.error("Invalid Doctor!")
             return
         }
 
@@ -96,7 +97,7 @@ class ManageSchedule extends Component {
         })
         if (res && res.errCode === 0) {
             toast.success("Save info successful!")
-        } else{
+        } else {
             toast.error("Save info error!")
         }
 
@@ -110,6 +111,8 @@ class ManageSchedule extends Component {
         let res = await getDetailDoctorService(selectedDoctor.value)
 
         console.log(res);
+        console.log(this.state);
+
 
     };
     buildDataInputSelect = (data) => {
@@ -133,24 +136,28 @@ class ManageSchedule extends Component {
         })
     }
     render() {
-        console.log("log state", this.state);
+        // console.log("log state manage schedule doctor", this.state);
         // console.log("log props", this.props);
         let { scheduleTime } = this.state
-        let { language } = this.props
+        let { language, user } = this.props
         let today = new Date(new Date().setDate(new Date().getDate()));// limit create new schedule today
         return (
             <div className="container">
                 <div className="title"><FormattedMessage id="doctor.manage-schedule" /></div>
                 <div className="row">
-                    <div className="col-6 form-group">
-                        <label><FormattedMessage id="doctor.choose-doctor" /></label>
-                        <Select
-                            className="input-info-left"
-                            value={this.state.selectedDoctor}
-                            onChange={this.handleChange}
-                            options={this.state.doctorList}
-                        />
-                    </div>
+                    {user.roleId === "R1" && (
+                        <>
+                            <div className="col-6 form-group">
+                                <label><FormattedMessage id="doctor.choose-doctor" /></label>
+                                <Select
+                                    className="input-info-left"
+                                    value={this.state.selectedDoctor}
+                                    onChange={this.handleChange}
+                                    options={this.state.doctorList}
+                                />
+                            </div>
+                        </>
+                    )}
                     <div className="col-6 form-group">
                         <label><FormattedMessage id="doctor.choose-date" /></label>
                         <div>
@@ -197,6 +204,7 @@ const mapStateToProps = (state) => ({
     allDoctors: state.admin.allDoctors,
     allSchedules: state.admin.allSchedules,
     language: state.app.language,
+    user: state.user.userInfo,
 });
 
 const mapDispatchToProps = (dispatch) => ({

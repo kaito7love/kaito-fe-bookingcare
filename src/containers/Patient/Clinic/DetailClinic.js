@@ -7,7 +7,7 @@ import HomeFooter from '../../HomePage/Footer/HomeFooter';
 import DoctorSchedule from '../Doctor/DoctorSchedule';
 import ProfileDoctor from '../Doctor/ProfileDoctor';
 import DoctorExtraInfo from '../Doctor/DoctorExtraInfo';
-import { getAllCodeService, getDetailSpecialtyService } from '../../../services/userService';
+import { getAllClinic, getAllCodeService, getDetailClinicService, getDetailSpecialtyService } from '../../../services/userService';
 import _ from 'lodash';
 import Select from 'react-select';
 import { LANGUAGES, LanguageUtils } from '../../../utils';
@@ -24,27 +24,71 @@ class DetailClinic extends Component {
     }
 
     async componentDidMount() {
-
+        await this.fetchDetailClinic()
     }
 
     async componentDidUpdate(prevProps, prevState, snapshot) {
         if (prevProps.language !== this.props.language) {
-
+            // this.dataDetailClinic = await getAllClinic();
         }
 
     }
 
+    handleChangeProvince = (event) => {
+        this.setState({ location: event.target.value }, () => {
+            console.log(this.state.location);
+            this.fetchDetailClinic();
+        });
+    };
 
+    fetchDetailClinic = async () => {
+        if (this.props.match && this.props.match.params && this.props.match.params.id) {
+            let id = this.props.match.params.id;
 
+            let res = await getDetailClinicService({
+                clinicId: id,
+                location: this.state.location
+            });
+            console.log(res);
+            let listProvince = await getAllCodeService("province");
+
+            console.log(listProvince);
+
+            if (res && res.errCode === 0) {
+                let data = res.data;
+                let arrDoctorId = [];
+                if (data && !_.isEmpty(data)) {
+                    let arr = data.doctor;
+                    if (arr && arr.length > 0) {
+                        arrDoctorId = arr.map(item => item.doctorId);
+                    }
+                }
+                let dataProvince = listProvince.data
+                if (dataProvince && dataProvince.length > 0) {
+                    dataProvince.unshift({
+                        keyMap: "all",
+                        value_en: "All",
+                        value_vi: "Toàn Quốc",
+                    })
+                }
+                this.setState({
+                    dataDetailSpecialty: data,
+                    arrDoctorId: arrDoctorId,
+                    listProvince: listProvince.data,
+                });
+            }
+        }
+    };
     render() {
         let { arrDoctorId, dataDetailSpecialty, location, listProvince } = this.state
         let { language } = this.props
-        // console.log("check specialty state", this.state);
+        console.log("check clinic detail state", this.state);
         return (
             <React.Fragment >
                 <HomeHeader />
-                <div className='detail-specialty '>
-                    {/* <div className='container'>
+
+                <div className='detail-clinic '>
+                    <div className='container'>
                         <div className='search-bar'>
                             <select
                                 className='form-select'
@@ -62,7 +106,7 @@ class DetailClinic extends Component {
                                 }
                             </select>
                         </div>
-                    </div> */}
+                    </div>
                     {arrDoctorId && arrDoctorId.length > 0 &&
 
                         arrDoctorId.map((item, index) => {
@@ -97,6 +141,16 @@ class DetailClinic extends Component {
                         })
                     }
                 </div>
+                <div className='description-clinic-background'>
+                    <div className='description-clinic container'>
+                        <div className="clinic-details">
+                            {dataDetailSpecialty && !_.isEmpty(dataDetailSpecialty) &&
+                                <div dangerouslySetInnerHTML={{ __html: dataDetailSpecialty.descriptionHTML }}></div>
+                            }
+                        </div>
+                    </div>
+                </div>
+
                 <HomeFooter />
             </React.Fragment >
         );

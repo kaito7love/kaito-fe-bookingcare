@@ -271,7 +271,7 @@ class UserRedux extends Component {
                                     <select className="form-select" value={this.state.position}
                                         onChange={(event) => { this.onChangeInput(event, 'position') }}>
                                         {positions && positions.length > 0 &&
-                                            positions.map((item, index) => {    
+                                            positions.map((item, index) => {
                                                 // console.log(item);
                                                 return (
                                                     <option key={index} value={item.keyMap}>

@@ -3,7 +3,10 @@
         "all": "All",
         "support": "Support",
         "appointment": "Appointment",
-        "welcome": "Welcome, "
+        "welcome": "Welcome, ",
+        "home": "At home",
+        "hospital": "At the Hospital",
+        "live": "Healthy Living"
     },
 
     "login": {
@@ -126,6 +129,8 @@
         "specialty": "Specialties",
         "facility": "Facilities",
         "social-media": "Social Media",
-        "more": "See More"
+        "more": "See All",
+        "search-ai": "Ask a question to the AI assistant",
+        "title": "The Source of Health"
     }
 }

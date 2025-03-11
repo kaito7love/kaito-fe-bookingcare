@@ -64,21 +64,21 @@ class HomeHeader extends Component {
                         <div className="header-service">
                             <div className="detail-service">
                                 <span className="detail-service-content">
-                                    Tại Nhà
+                                    <FormattedMessage id="home-header.home" />
                                 </span>
                             </div>
                         </div>
                         <div className="header-service">
                             <div className="detail-service">
                                 <span className="detail-service-content">
-                                    Tại Viện
+                                    <FormattedMessage id="home-header.hospital" />
                                 </span>
                             </div>
                         </div>
                         <div className="header-service">
                             <div className="detail-service">
                                 <span className="detail-service-content">
-                                    Sống Khỏe
+                                    <FormattedMessage id="home-header.live" />
                                 </span>
                             </div>
                         </div>
@@ -117,14 +117,14 @@ class HomeHeader extends Component {
                                 </div>
                             </div>
                         </div>
-                        <div className="header-info">
+                        {/* <div className="header-info">
                             <a href="http://localhost:3000/login">
                                 <div className="header-login">
                                     <i class="fas fa-sign-in-alt"></i>
                                     <p>Login</p>
                                 </div>
                             </a>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>
