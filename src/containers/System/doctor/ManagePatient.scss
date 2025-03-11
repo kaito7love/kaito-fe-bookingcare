@@ -1,3 +1,22 @@
 tbody tr td:last-child {
     width: 170px;
 }
+
+.loading {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    transition: all 0.3s ease-in-out;
+
+    &.active {
+        z-index: 9999;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+}
+

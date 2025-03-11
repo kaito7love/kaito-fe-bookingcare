@@ -30,6 +30,7 @@
     "react-scripts": "^4.0.3",
     "react-select": "^5.9.0",
     "react-slick": "^0.30.2",
+    "react-spinners": "^0.15.0",
     "react-toastify": "^9.0.3",
     "reactstrap": "^9.2.3",
     "redux": "^4.1.0",

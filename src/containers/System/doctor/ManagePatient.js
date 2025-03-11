@@ -11,7 +11,7 @@ import moment from "moment";
 import { LANGUAGES } from "../../../utils";
 import Select from "react-select";
 import RemedyModal from "./RemedyModal";
-
+import { ScaleLoader } from "react-spinners";
 
 class ManagePatient extends Component {
     constructor(props) {
@@ -23,6 +23,7 @@ class ManagePatient extends Component {
             doctorList: '',
             isOpenRemedyModal: false,
             dataRemedy: {},
+            loading: false,
         };
     }
 
@@ -109,7 +110,6 @@ class ManagePatient extends Component {
     }
 
     handleBtnCancel = async (item) => {
-
         let formatedDate = new Date(this.state.currentDate).getTime()
         let data = {
             doctorId: item.doctorId,
@@ -120,11 +120,13 @@ class ManagePatient extends Component {
         let res = await cancelBookingService({
             data
         })
+        toast.success("Updated successful!")
         if (res.data && res.data.errCode === 0) {
             this.setState({
                 dataPatient: res.data.data
             })
         }
+        
         // console.log(res);
 
     }
@@ -132,7 +134,9 @@ class ManagePatient extends Component {
     sendRemedy = async (data) => {
         let formData = new FormData();
         formData.append("image", data.selectedFile);
-
+        this.setState({
+            loading: true
+        })
         let formatedDate = new Date(this.state.currentDate).getTime()
         data.date = formatedDate
         let res = await sendBillService({
@@ -143,9 +147,11 @@ class ManagePatient extends Component {
         console.log(res.data);
         if (res.data && res.data.errCode === 0) {
             this.setState({
-                dataPatient: res.data.data
+                dataPatient: res.data.data,
+                loading: false,
             })
         }
+        toast.success("Updated successful!")
     }
 
     toggleRemedyModel = () => {
@@ -259,6 +265,14 @@ class ManagePatient extends Component {
                     toggleRemedyModel={this.toggleRemedyModel}
                     sendRemedy={this.sendRemedy}
                 />
+                <div className={`loading ${this.state.loading ? "active" : ""}`}>
+                    <ScaleLoader
+                        color={"#ffffff"}
+                        loading={this.state.loading}
+                        size={150}
+                    />
+                </div>
+
             </>
         );
     }
