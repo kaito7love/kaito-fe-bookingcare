@@ -126,7 +126,7 @@ class ManagePatient extends Component {
                 dataPatient: res.data.data
             })
         }
-        
+
         // console.log(res);
 
     }
@@ -148,9 +148,11 @@ class ManagePatient extends Component {
         if (res.data && res.data.errCode === 0) {
             this.setState({
                 dataPatient: res.data.data,
-                loading: false,
             })
         }
+        this.setState({
+            loading: false
+        })
         toast.success("Updated successful!")
     }
 

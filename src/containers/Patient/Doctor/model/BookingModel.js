@@ -14,6 +14,7 @@ import * as actions from "../../../../store/actions";
 import Select from 'react-select';
 import { toast } from 'react-toastify';
 import moment from 'moment';
+import { ScaleLoader } from 'react-spinners';
 
 class BookingModel extends Component {
     constructor(props) {
@@ -31,6 +32,8 @@ class BookingModel extends Component {
             birthday: '',
             doctorId: '',
             timeType: '',
+
+            loading: false,
 
         })
     }
@@ -130,6 +133,9 @@ class BookingModel extends Component {
         let timeString = this.buildTimeBooking(this.props.dataTime)
         let doctorName = this.buildDoctorName(this.props.dataTime)
 
+        this.setState({
+            loading: true
+        })
         let res = await postBookingAppointment({
             fullName: this.state.fullName,
             phone: this.state.phone,
@@ -157,7 +163,7 @@ class BookingModel extends Component {
                 gender: '',
                 birthday: '',
                 timeType: '',
-
+                loading: false,
             })
             toast.success("Booking a new appointment successful!")
             this.props.toggleBookingModel()
@@ -383,6 +389,13 @@ class BookingModel extends Component {
                             </Button>
                         </ModalFooter>
                     </Modal>
+                </div>
+                <div className={`loading ${this.state.loading ? "active" : ""}`}>
+                    <ScaleLoader
+                        color={"#ffffff"}
+                        loading={this.state.loading}
+                        size={150}
+                    />
                 </div>
             </React.Fragment>
         );

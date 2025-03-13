@@ -126,6 +126,7 @@ class DoctorSchedule extends Component {
       isOpenModel: true,
       dataTime: time
     });
+    
   };
 
   toggleBookingModel = () => {

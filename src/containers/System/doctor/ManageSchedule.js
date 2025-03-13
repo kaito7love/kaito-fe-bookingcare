@@ -141,6 +141,9 @@ class ManageSchedule extends Component {
         let { scheduleTime } = this.state
         let { language, user } = this.props
         let today = new Date(new Date().setDate(new Date().getDate()));// limit create new schedule today
+
+        console.log(scheduleTime);
+        
         return (
             <div className="container">
                 <div className="title"><FormattedMessage id="doctor.manage-schedule" /></div>
@@ -171,6 +174,7 @@ class ManageSchedule extends Component {
 
                     </div>
                     <div className="col-12 pick-hour-container">
+                    
                         {scheduleTime && scheduleTime.length > 0 &&
                             scheduleTime.map((item, index) => {
                                 return (

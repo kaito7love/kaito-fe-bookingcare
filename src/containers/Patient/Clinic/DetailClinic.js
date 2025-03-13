@@ -49,10 +49,10 @@ class DetailClinic extends Component {
                 clinicId: id,
                 location: this.state.location
             });
-            console.log(res);
-            let listProvince = await getAllCodeService("province");
+            console.log("check data get foirm detail", res.data.doctor);
+            let listProvince = await getAllCodeService("PROVINCE");
 
-            console.log(listProvince);
+            // console.log(listProvince);
 
             if (res && res.errCode === 0) {
                 let data = res.data;
@@ -72,7 +72,7 @@ class DetailClinic extends Component {
                     })
                 }
                 this.setState({
-                    dataDetailSpecialty: data,
+                    dataDetailSpecialty: data.detail,
                     arrDoctorId: arrDoctorId,
                     listProvince: listProvince.data,
                 });

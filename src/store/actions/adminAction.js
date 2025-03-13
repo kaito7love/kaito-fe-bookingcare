@@ -9,7 +9,7 @@ export const fetchGenderStart = () => {
         try {
             dispatch({ type: actionTypes.FETCH_GENDER_START })
 
-            let res = await userService.getAllCodeService('gender');
+            let res = await userService.getAllCodeService('GENDER');
             if (res && res.errCode === 0) {
 
                 dispatch(fetchGenderSuccess(res.data))
@@ -35,7 +35,7 @@ export const fetchPositionStart = () => {
         try {
             // dispatch({ type: actionTypes.FETCH_GENDER_START })
 
-            let res = await userService.getAllCodeService('position');
+            let res = await userService.getAllCodeService('POSITION');
             if (res && res.errCode === 0) {
 
                 dispatch(fetchPositionSuccess(res.data))
@@ -61,7 +61,7 @@ export const fetchRoleStart = () => {
         try {
             // dispatch({ type: actionTypes.FETCH_GENDER_START })
 
-            let res = await userService.getAllCodeService('role');
+            let res = await userService.getAllCodeService('ROLE');
             if (res && res.errCode === 0) {
 
                 dispatch(fetchRoleSuccess(res.data))
@@ -271,8 +271,8 @@ export const saveInfoDoctor = (data) => {
 export const fetchAllScheduleTime = (data) => {
     return async (dispatch, getState) => {
         try {
-            let res = await userService.getAllCodeService('time')
-            // console.log("from action time" ,res);
+            let res = await userService.getAllCodeService('TIME')
+            console.log("from action time" ,res);
             if (res && res.errCode === 0) {
                 dispatch({
                     type: actionTypes.FETCH_ALL_SCHEDULE_TIME_SUCCESS,

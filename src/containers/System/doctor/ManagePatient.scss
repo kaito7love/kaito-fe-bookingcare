@@ -4,7 +4,7 @@ tbody tr td:last-child {
 
 .loading {
     display: flex;
-    position: absolute;
+    position: fixed;
     justify-content: center;
     align-items: center;
     top: 0;

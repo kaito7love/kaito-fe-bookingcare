@@ -44,7 +44,7 @@
         },
         "doctor": {
             "manage-schedule": "Manage Schedule",
-            "manage-patient": "Manage patient",
+            "manage-patient": "Manage Patient",
             "choose-doctor": "Choose Doctor",
             "choose-date": "Choose Date",
             "Save": "Save"

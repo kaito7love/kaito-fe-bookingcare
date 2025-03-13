@@ -49,10 +49,12 @@ class DetailSpecialty extends Component {
                 specialtyId: id,
                 location: this.state.location
             });
-            let listProvince = await getAllCodeService("province");
+            let listProvince = await getAllCodeService("PROVINCE");
 
             if (res && res.errCode === 0) {
                 let data = res.data;
+                console.log("check data specialty", res);
+                
                 let arrDoctorId = [];
                 if (data && !_.isEmpty(data)) {
                     let arr = data.doctor;
@@ -69,7 +71,7 @@ class DetailSpecialty extends Component {
                     })
                 }
                 this.setState({
-                    dataDetailSpecialty: data,
+                    dataDetailSpecialty: data.detail,
                     arrDoctorId: arrDoctorId,
                     listProvince: listProvince.data,
                 });
