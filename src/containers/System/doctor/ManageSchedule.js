@@ -95,13 +95,14 @@ class ManageSchedule extends Component {
             doctorId: selectedDoctor.value,
             formatedDate: +formatedDate
         })
+        // console.log("check schudule doctor" , res);
+        
         if (res && res.errCode === 0) {
             toast.success("Save info successful!")
         } else {
             toast.error("Save info error!")
         }
 
-        console.log("from ract", res);
 
     }
     handleChange = async (selectedDoctor) => {
