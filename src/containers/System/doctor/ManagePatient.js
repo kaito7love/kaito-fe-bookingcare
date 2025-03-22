@@ -144,7 +144,7 @@ class ManagePatient extends Component {
             language: this.props.language,
             formData: formData,
         })
-        console.log(res.data);
+        // console.log(res.data);
         if (res.data && res.data.errCode === 0) {
             this.setState({
                 dataPatient: res.data.data,

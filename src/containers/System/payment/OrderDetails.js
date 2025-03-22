@@ -1,54 +1,89 @@
-import React from "react";
-import "./OrderDetails.scss"; // Import SCSS
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import "./OrderDetails.scss";
+import axios from "axios";
+import { momoPaymentService } from "../../../services/userService";
 
-const OrderDetails = () => {
-  return (
-    <div className="order-container">
-      <h2>THÔNG TIN ĐƠN HÀNG</h2>
-      <div className="order-info">
-        <p><strong>Đơn hàng #:</strong> R67C086418F62C</p>
-        <p><strong>Tổng số tiền:</strong> 100,000đ</p>
-        <p><strong>TT hóa đơn:</strong> <span className="pending-status">Chưa thanh toán</span></p>
-        <p><strong>Ngày tạo:</strong> 27/02/2025 22:35:29</p>
+class OrderDetails extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      paymentMethod: "momo",
+      message: "",
+    };
+  }
+
+  handlePaymentChange = (event) => {
+    this.setState({ paymentMethod: event.target.value });
+  };
+
+  processPayment = async () => {
+    const { paymentMethod } = this.state;
+    const amount = 100000; // Giả lập số tiền thanh toán
+
+    if (paymentMethod === "momo") {
+      try {
+        let response = await momoPaymentService({ amount });
+        console.log("check momo fe", response);
+
+        if (response) {
+          window.location.href = response; // Chuyển hướng đến cổng thanh toán MoMo
+        } else {
+          this.setState({ message: "Lỗi khi tạo thanh toán!" });
+        }
+      } catch (error) {
+        console.error("Lỗi thanh toán:", error);
+        this.setState({ message: "Lỗi kết nối đến máy chủ!" });
+      }
+    } else {
+      this.setState({ message: "Phương thức thanh toán này chưa hỗ trợ!" });
+    }
+  };
+
+  render() {
+    let { language } = this.props;
+    let { paymentMethod, message } = this.state;
+
+    return (
+      <div className="payment-container">
+        <h3>Thanh Toán Đơn Hàng</h3>
+
+        <div className="order-info">
+          <p>
+            <strong>Mã đơn hàng:</strong> <span id="orderId">R67C086418F62C</span>
+          </p>
+          <p>
+            <strong>Tổng tiền:</strong> <span id="totalAmount">100,000 VND</span>
+          </p>
+          <p>
+            <strong>Trạng thái:</strong> <span className="pending">Chưa thanh toán</span>
+          </p>
+        </div>
+
+        <h2>Chọn phương thức thanh toán</h2>
+        <div className="payment-methods">
+          <label>
+            <input type="radio" name="payment" value="momo" checked={paymentMethod === "momo"} onChange={this.handlePaymentChange} /> MoMo
+          </label>
+          <label>
+            <input type="radio" name="payment" value="bank" checked={paymentMethod === "bank"} onChange={this.handlePaymentChange} /> Chuyển khoản ngân hàng
+          </label>
+          <label>
+            <input type="radio" name="payment" value="credit" checked={paymentMethod === "credit"} onChange={this.handlePaymentChange} /> Thẻ tín dụng
+          </label>
+        </div>
+
+        <button onClick={this.processPayment}>Thanh Toán</button>
+        {message && <p className="error-message">{message}</p>}
       </div>
+    );
+  }
+}
 
-      <table>
-        <thead>
-          <tr>
-            <th>STT</th>
-            <th>Tên dịch vụ</th>
-            <th>Tài khoản</th>
-            <th>Số tiền</th>
-            <th>Chiết khấu</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>Vàng 5.4 từ 100k (100k 540tv)</td>
-            <td>kaito7laze</td>
-            <td>100,000 Thỏi vàng</td>
-            <td>0%</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <h2>THÔNG TIN THANH TOÁN</h2>
-      <table>
-        <tbody>
-          <tr><td>Ngân hàng</td><td><strong>NGÂN HÀNG TMCP Á CHÂU (ACB)</strong></td></tr>
-          <tr><td>Số tài khoản</td><td>6085901</td></tr>
-          <tr><td>Chủ tài khoản</td><td>BUI CONG THUONG</td></tr>
-          <tr><td>Số tiền</td><td>100,000 VND</td></tr>
-          <tr><td>Nội dung chuyển tiền</td><td>Muathe inv296055</td></tr>
-        </tbody>
-      </table>
-
-      <p className="important-note">
-        Thời gian hiệu lực hóa đơn là 15p, sau 15p hóa đơn sẽ bị hủy.
-      </p>
-    </div>
-  );
+const mapStateToProps = (state) => {
+  return {
+    language: state.app.language,
+  };
 };
 
-export default OrderDetails;
+export default connect(mapStateToProps)(OrderDetails);

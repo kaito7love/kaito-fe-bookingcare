@@ -100,6 +100,10 @@ const cancelBookingService = (data) => {
     return axios.post(`/api/cancel-booking`, data);
 };
 
+const momoPaymentService = (data) => {
+    return axios.post(`/api/payments/create_momo_payment`, data);
+};
+
 export {
     handleLoginAPI,
     getAllUsers,
@@ -126,4 +130,5 @@ export {
     getDetailClinicService,
     sendBillService,
     cancelBookingService,
+    momoPaymentService,
 };
