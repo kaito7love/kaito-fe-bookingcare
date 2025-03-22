@@ -168,6 +168,9 @@ class BookingModel extends Component {
             toast.success("Booking a new appointment successful!")
             this.props.toggleBookingModel()
         } else {
+            this.setState({
+                loading: false,
+            })
             toast.error("Booking error!")
         }
         console.log("check confirm button", this.state);
