@@ -82,7 +82,7 @@ class RemedyModal extends Component {
                         centered={true}
                     >
                         <ModalHeader toggle={this.toggle}>
-                            <div className='title'>Gửi Hóa Đơn</div>
+                            <div className='title'><FormattedMessage id='form.remedy' /></div>
                         </ModalHeader>
                         <ModalBody>
                             <div className="container">
@@ -90,7 +90,7 @@ class RemedyModal extends Component {
                                     <div className="row ">
                                         <div className="col-12">
                                             <label className="form-label">
-                                                Địa chỉ Email:
+                                                <FormattedMessage id='form.email' />:
                                             </label>
                                             <input type="email" name="email" className="form-control" value={email}
                                                 onChange={(event) => { this.handleOnChangeInput(event, "email"); }}
@@ -101,7 +101,7 @@ class RemedyModal extends Component {
                                     <div className='row'>
                                         <div className="col-12">
                                             <label className="form-label">
-                                                Chọn File:
+                                            <FormattedMessage id='form.file' />:
                                             </label>
                                             <input type="file" name="file" className="form-control"
                                                 onChange={(event) => this.handleOnChangeImage(event)}

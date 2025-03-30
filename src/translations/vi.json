@@ -51,7 +51,7 @@
         }
     },
     "form": {
-        "email": "Email",
+        "email": "Địa chỉ Email",
         "password": "Mật khẩu",
         "firstName": "Tên",
         "lastName": "Họ",

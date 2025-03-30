@@ -222,7 +222,7 @@ class BookingModel extends Component {
                         size="lg"
                     >
                         <ModalHeader toggle={this.toggle}>
-                            <div className='title'>Thông tin đặt lịch khám bệnh</div>
+                            <div className='title'><FormattedMessage id='form.appointment-title' /> :</div>
                         </ModalHeader>
                         <ModalBody>
                             <div className="container">
@@ -255,7 +255,7 @@ class BookingModel extends Component {
                                                 for="exampleInputEmail1"
                                                 className="form-label"
                                             >
-                                                Họ và Tên:
+                                                <FormattedMessage id='form.fullName' /> :
                                             </label>
                                             <input
                                                 type="email"
@@ -275,7 +275,7 @@ class BookingModel extends Component {
                                                 for="exampleInputPassword1"
                                                 className="form-label"
                                             >
-                                                Số điện thoại:
+                                                <FormattedMessage id='form.phone' /> :
                                             </label>
                                             <input
                                                 type="text"
@@ -294,7 +294,7 @@ class BookingModel extends Component {
                                     <div className="row">
                                         <div className="col-6">
                                             <label className="form-label">
-                                                Địa chỉ Email:
+                                                <FormattedMessage id='form.email' /> :
                                             </label>
                                             <input
                                                 type="text"
@@ -311,7 +311,7 @@ class BookingModel extends Component {
                                         </div>
                                         <div className="col-6">
                                             <label className="form-label">
-                                                Địa chỉ liên hệ:
+                                                <FormattedMessage id='form.address' /> :
                                             </label>
                                             <input
                                                 type="text"
@@ -330,7 +330,7 @@ class BookingModel extends Component {
                                     <div className='row'>
                                         <div className="col-12">
                                             <label className="form-label">
-                                                Lý do:
+                                                <FormattedMessage id='form.reason' /> :
                                             </label>
                                             <input
                                                 type="text"
@@ -352,7 +352,7 @@ class BookingModel extends Component {
                                                 for="Gender"
                                                 className="form-label"
                                             >
-                                                Giới tính:
+                                                <FormattedMessage id='form.gender' /> :
                                             </label>
                                             <Select
                                                 className="input-info-left"
@@ -366,7 +366,7 @@ class BookingModel extends Component {
                                                 for="birthday"
                                                 className="form-label"
                                             >
-                                                Ngày sinh:
+                                                <FormattedMessage id='form.birthday' /> :
                                             </label>
                                             <DatePicker
                                                 className='form-control'
@@ -385,10 +385,10 @@ class BookingModel extends Component {
                                 color="btn btn-primary"
                                 onClick={(event) => this.handleConfirmBooking(event)}
                             >
-                                Create Appointment
+                                <FormattedMessage id='form.create-appointment' />
                             </Button>{" "}
                             <Button color="btn btn-secondary" onClick={this.toggle}>
-                                Cancel
+                            <FormattedMessage id='form.create-cancel' />
                             </Button>
                         </ModalFooter>
                     </Modal>

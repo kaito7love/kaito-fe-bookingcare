@@ -64,7 +64,15 @@
         "imageLoad": "Upload Image",
         "create": "Create User",
         "edit": "Save Changes",
-        "create-detail": "Create Information"
+        "create-detail": "Create Information",
+        "birthday": "Birthday",
+        "reason": "Reason",
+        "fullName": "Full Name",
+        "remedy": "Send Remedy",
+        "file": "Choose file",
+        "create-appointment": "Create Appointment",
+        "cancel": "Cancel",
+        "appointment-title": "Medical appointment information"
     },
     "doctor": {
         "manage-schedule": "Manage Schedule",
